@@ -1,0 +1,50 @@
+@import "./cmps/app-header.css";
+@import "./cmps/home-page.css";
+@import "./cmps/app-footer.css";
+@import "./cmps/about-page.css";
+@import "./cmps/app-mail.css";
+
+* {
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+}
+
+a {
+  text-decoration: none;
+  list-style: none;
+  color: inherit;
+}
+a:hover {
+  cursor: pointer;
+}
+
+img {
+  width: 100%;
+  height: 100%;
+  object-fit: contain;
+}
+/* header */
+
+.app-header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 0.5rem;
+}
+
+.header-nav {
+  display: flex;
+}
+
+.header-nav li {
+  margin-inline-end: 0.5rem;
+}
+
+/* footer */
+.app-footer {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  background-color: rgb(225, 225, 225);
+}
