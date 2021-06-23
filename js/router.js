@@ -1,6 +1,7 @@
 import homePage from './pages/home-page.js'
 import aboutPage from './pages/about-page.js'
-import mailApp from './apps/MisterMail/mail-app.js'
+import mailApp from './apps/MisterMail/pages/email-app.js'
+import mailDetails from './apps/MisterMail/pages/email-details.js'
 import noteApp from './apps/MissKeep/note-app.js'
 const routes = [
     {
@@ -10,6 +11,10 @@ const routes = [
     {
         path: '/mail',
         component: mailApp
+    },
+    {
+        path: '/mail/:mailId',
+        component: mailDetails
     },
     {
         path: '/note',
