@@ -1,0 +1,43 @@
+.email-list {
+  width: 100%;
+}
+.email-container {
+  padding: 0.5rem 1rem;
+  box-shadow: inset 0 -1px 0 0 rgb(100 121 143 /12%);
+  background: rgba(242, 245, 245, 0.8);
+  color: #202124;
+  cursor: pointer;
+  margin-bottom: 1px;
+}
+
+.email-container:hover {
+  box-shadow: inset 1px 0 0 #dadce0, inset -1px 0 0 #dadce0,
+    0 1px 2px 0 rgb(60 64 67 / 30%), 0 1px 3px 1px rgb(60 64 67 / 15%);
+  z-index: 2;
+}
+
+.email {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+.email-name,
+.email-subject,
+.email-time {
+  font-weight: 700;
+}
+
+.email-details {
+  width: 100%;
+}
+
+.email-content {
+  display: flex;
+  flex-direction: column;
+}
+/* 
+.email-preview-controls {
+  position: absolute;
+  right: 0;
+} */
