@@ -3,6 +3,7 @@
 @import "./cmps/app-footer.css";
 @import "./cmps/about-page.css";
 @import "./cmps/app-mail.css";
+@import "./cmps/app-note.css";
 
 * {
   box-sizing: border-box;
