@@ -1,0 +1,33 @@
+.keep-app {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    text-align: center;
+}
+
+.notes-list {
+    display: grid;
+    margin-top: 20px;
+    grid-template-columns: 1fr 1fr 1fr 1fr 1fr;
+    grid-template-rows: 2fr 1fr 3fr 1fr;
+    text-align: center;
+}
+
+.note-container {
+
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+
+    height: 200px;
+    width: 200px;
+    border: 1px solid black;
+    gap: 10px;
+
+} 
+
+.btn-container {
+    display: flex;
+    flex-direction: row;
+    /* justify-content: space-between; */
+}

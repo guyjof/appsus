@@ -24,4 +24,5 @@ const options = {
     created() {
     }
 };
+
 const app = new Vue(options);
