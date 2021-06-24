@@ -9,6 +9,10 @@
   margin-bottom: 1px;
 }
 
+article.email-container:hover {
+  background-color: #fff;
+}
+
 .email-container.unRead {
   background: #fff;
   font-weight: 400;
@@ -40,11 +44,23 @@
   z-index: 2;
 }
 
+/* unread */
 .email-name,
 .email-subject,
 .email-time {
   font-weight: 700;
 }
+
+/* read */
+.email-name.read,
+.email-subject.read,
+.email-time.read {
+  font-weight: 400;
+}
+
+/* .read {
+  font-weight: 400;
+} */
 
 .email-details {
   width: 100%;

@@ -1,17 +1,27 @@
 import emailPreview from "./email-preview.js";
+import emailListNav from "./email-list-nav.js";
 import { emailService } from "../services/email-service.js"
 import { eventBus } from "../../../services/event-bus-service.js";
+
 export default {
     props: ['emails'],
     template: `
         <section class="email-list">
-<!-- add new nav to list -->
+            <email-list-nav />
+            
             <ul>
                 <li @mouseenter="toggleIsHovered(email.id)" 
-                @mouseleave="toggleIsHovered(email.id)" 
-                @click="select(email)" v-for="email in emails" :key="email.id" class="email-container" :class="{unRead:email.isRead}">
-                    <email-preview  @click="select(email)"
-                    :email="email" :hover="emailHoverd"/>
+                    @mouseleave="toggleIsHovered(email.id)" 
+                    @click="select(email)" 
+                    v-for="email in emails" 
+                    :key="email.id" 
+                    class="email-container" 
+                    :class="{unRead:email.isRead}">
+
+                    <email-preview  
+                    @click="select(email)"
+                    :email="email" 
+                    :hover="emailHoverd"/>
                 </li>
             </ul>
         </section>
@@ -43,5 +53,6 @@ export default {
     },
     components: {
         emailPreview,
+        emailListNav,
     }
 };

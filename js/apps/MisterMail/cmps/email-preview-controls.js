@@ -8,7 +8,7 @@ export default {
 </button>
 
 <button @click.stop="toggleRead(email)">
-    <span class="material-icons">drafts</span>
+<span class="material-icons">mark_as_unread</span>
 </button>
 
 <button @click.stop="archive(email)">

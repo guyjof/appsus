@@ -1,0 +1,48 @@
+nav {
+  display: flex;
+  justify-content: space-around;
+  align-items: center;
+  align-content: center;
+  border-bottom: 1px solid rgb(235, 235, 235);
+}
+
+article {
+  display: flex;
+  justify-content: center;
+  width: 20%;
+  padding: 15px;
+}
+nav > article:hover {
+  background-color: #f3f3f3;
+}
+
+article.red {
+  box-shadow: inset 0px -5px 0px 0px #d93026;
+}
+article.orange {
+  box-shadow: inset 0px -5px 0px 0px #e37400;
+}
+article.green {
+  color: #188038;
+  box-shadow: inset 0px -5px 0px 0px #188038;
+}
+
+article button {
+  font-size: unset;
+  display: flex;
+  align-items: center;
+  align-content: center;
+  justify-content: center;
+  gap: 10px;
+}
+
+h4 {
+  display: inline-block;
+  font-weight: 500;
+}
+
+button {
+  cursor: pointer;
+  background: transparent;
+  border: none;
+}
