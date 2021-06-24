@@ -45,8 +45,11 @@ export default {
                 id: '',
                 body: '',
                 isRead: false,
-                sender: '',
-                reciver: '',
+                sentAt: '',
+                sender: {
+                    name:'',
+                    email:''
+                },
                 subject: '',
             }
         }
@@ -60,8 +63,11 @@ export default {
                         id: '',
                         body: '',
                         isRead: false,
-                        sender: '',
-                        reciver: '',
+                        sentAt: '',
+                        sender: {
+                            name:'',
+                            email:''
+                        },
                         subject: '',
                     }
                     this.$emit('send')

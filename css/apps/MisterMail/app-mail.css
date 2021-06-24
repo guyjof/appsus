@@ -62,13 +62,15 @@ article.email-container:hover {
   font-weight: 400;
 } */
 
-.email-details {
-  width: 100%;
-}
-
-.email-content {
+.email-modal {
   display: flex;
   flex-direction: column;
+  max-height: 250px;
+}
+
+.email-modal-header {
+  display: flex;
+  justify-content: space-between;
 }
 
 /* controls */

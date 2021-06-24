@@ -8,6 +8,7 @@
 @import "./apps/MisterMail/cmps/email-nav.css";
 @import "./apps/MisterMail/cmps/email-header.css";
 @import "./apps/MisterMail/cmps/email-list-nav.css";
+@import "./apps/MisterMail/pages/email-details.css";
 @import "./cmps/app-note.css";
 * {
   box-sizing: border-box;

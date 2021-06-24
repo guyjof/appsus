@@ -5,6 +5,9 @@
 
 .email-nav li {
   display: flex;
+  align-content: center;
+  align-items: center;
+  justify-content: space-between;
   list-style: none;
   padding: 4px 26px;
   max-width: 250px;
@@ -33,10 +36,6 @@
   font-size: 1.3rem;
 }
 
-.email-nav ul li span {
-  margin-inline-end: 15px;
-}
-
 .nav-regular:hover {
   color: #202124;
   background-color: #e8eaed;
@@ -61,4 +60,12 @@
 
 .add-btn {
   font-weight: 700;
+}
+
+.nav-title {
+  display: flex;
+  align-items: center;
+  align-content: center;
+  justify-content: center;
+  gap: 15px;
 }
