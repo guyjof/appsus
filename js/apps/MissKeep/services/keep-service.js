@@ -17,10 +17,9 @@ function query() {
     return storageService.query(KEEP_KEY)
 }
 
-function addNote(type, data) {
+function addNote({type, info}) {
     console.log('Adding new note');
-    console.log(type, data)
-    var newNote = _createNewNoteObj(type, data)
+    var newNote = _createNewNoteObj(type, info)
     gNotes.push(newNote)
     return storageService.post( KEEP_KEY, newNote)
 
@@ -31,12 +30,13 @@ function remove(noteId) {
   }
 
 
-function _createNewNoteObj(type, data) {
+function _createNewNoteObj(type, info) {
+    console.log("data:", info , "type:", type)
     return {
-        type,
-        data,
         id: utilService.makeId(),
-        date: new Date(),
+        type,
+        info,
+        // date: new Date(),
     }
 }
 
@@ -46,16 +46,17 @@ function _creatNotes() {
     if (!notes || !notes.length) {
         notes = [
             {
-                type: "NoteTxt",
-                isPinned: true,
+                id: utilService.makeId(),
+                type: "noteTxt",
                 info: {
                     txt: "Fullstack Me Baby!"
                 }
             },
             {
-                type: "NoteImg",
+                id: utilService.makeId(),
+                type: "noteImg",
                 info: {
-                    url: "http://some-img/me",
+                    url: "https://images.unsplash.com/photo-1597239450996-ea7c2c564412?ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&ixlib=rb-1.2.1&auto=format&fit=crop&w=634&q=80",
                     title: "Me playing Mi"
                 },
                 style: {
@@ -63,13 +64,22 @@ function _creatNotes() {
                 }
             },
             {
-                type: "NoteTodos",
+                id: utilService.makeId(),
+                type: "noteTodo",
                 info: {
                     label: "How was it:",
                     todos: [
                         { txt: "Do that", doneAt: null },
                         { txt: "Do this", doneAt: 187111111 }
                     ]
+                }
+            },
+            {
+                id: utilService.makeId(),
+                type: "noteVideo",
+                info: {
+                    url: 'https://www.youtube.com/embed/lO7XpDalr5g',
+                    title: 'Daily Dose of Internet'
                 }
             }
         ];

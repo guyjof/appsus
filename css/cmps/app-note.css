@@ -15,14 +15,19 @@
 
 .note-container {
 
-    display: flex;
-    flex-direction: column;
+    display: grid;
+    /* grid-template-columns: 1fr 1fr 1fr 1fr 1fr;
+    grid-template-rows: 2fr 1fr 3fr 1fr; */
+    /* flex-direction: column; */
     justify-content: space-between;
 
-    height: 200px;
-    width: 200px;
+    /* height: 200px;
+    width: 200px; */
     border: 1px solid black;
     gap: 10px;
+
+    background-color: rgb(235, 250, 167);
+    border-radius: 30px;
 
 } 
 
@@ -30,4 +35,19 @@
     display: flex;
     flex-direction: row;
     /* justify-content: space-between; */
+}
+
+
+.add-keep-container {
+    background-color:lightcoral;
+    /* height: 200px; */
+    /* display: flex; */
+    /* flex-direction: column; */
+}
+
+.add-note-btn{
+    background-color: rgb(155, 236, 134);
+    border: 1px solid rgb(0, 0, 0);
+    padding: 15px;
+    border-radius:50% ;
 }
