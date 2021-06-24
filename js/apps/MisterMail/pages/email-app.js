@@ -5,15 +5,28 @@ import emailFilter from '../cmps/email-filter.js';
 import emailDetails from '../pages/email-details.js'
 import { utilService } from '../../../services/util-service.js';
 import emailCompose from '../cmps/email-compose.js';
+import { eventBus } from '../../../services/event-bus-service.js';
 
 export default {
     template: `
         <section class="email-app">
-            <email-nav @open="composeNewEmail" @close="closeNewEmail"/>
-            <email-details v-if="selectedEmail" :email="selectedEmail" @close="closeDetails"/>
-            <email-list v-else="selectedEmail" :emails="this.emails" @selected="selectEmail" />
-            <email-compose v-if="newEmail" @close="closeNewEmail" @send="loadEmails"/>
-        </section>
+            <!-- email header -->
+
+            <div class="email-body">
+
+                <div class="nav">
+                    <email-nav @open="composeNewEmail" @close="closeNewEmail"/>
+                </div>
+                
+                <div class="main">
+                    <!-- email controls -->
+                    <email-details v-if="selectedEmail" :email="selectedEmail" @close="closeDetails"/>
+                    <email-list v-else="selectedEmail" :emails="this.emails" @selected="selectEmail" @update="loadEmails"/>
+                    <email-compose v-if="newEmail" @close="closeNewEmail" @send="loadEmails"/>
+                </div>
+                
+            </div>
+            </section>
     `,
     data() {
         return {
@@ -25,6 +38,11 @@ export default {
     },
     created() {
         this.loadEmails();
+        eventBus.$on('removeEmail', (emailId) => {
+            emailService.remove(emailId)
+                .then(() => this.loadEmails())
+
+        })
     },
     methods: {
         loadEmails() {
@@ -38,9 +56,6 @@ export default {
         closeDetails() {
             this.selectedEmail = null;
         },
-        removeEmail(id) {
-            emailService.remove(id);
-        },
         MarkAsRead() {
 
         },
@@ -52,7 +67,7 @@ export default {
         },
         closeNewEmail() {
             this.newEmail = false
-        }
+        },
     },
 
     computed: {

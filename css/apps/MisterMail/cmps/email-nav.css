@@ -1,28 +1,42 @@
-.email-nav button {
+.email-nav {
+  width: 300px;
+}
+
+.email-nav li {
+  display: flex;
+  list-style: none;
+  padding: 4px 26px;
+  max-width: 250px;
+  cursor: pointer;
+  border-top-right-radius: 30px;
+  border-bottom-right-radius: 30px;
+}
+
+.send-btn button {
+  display: flex;
   padding: 10px;
   border: 1px solid #d3d3d3;
   background: #fff;
   border-radius: 3em;
   font-size: 1rem;
-  margin: 0.6rem 0;
+  margin: 0.6rem auto;
+  margin-top: 0;
+  color: #db3b32;
+}
+.send-btn span {
+  font-size: 1.3rem;
 }
 
-.email-nav {
-  padding: 0 26px;
-  width: 300px;
-  border: 1px solid black;
+.email-nav ul li span {
+  margin-inline-end: 15px;
 }
 
-.email-nav li {
-  list-style: none;
-  padding: 4px 0;
-  cursor: pointer;
-}
 .nav-regular:hover {
   color: #202124;
   background-color: #e8eaed;
 }
-.nav-inbox:active {
+.nav-inbox:active,
+.nav-inbox:hover {
   color: #d93025;
   background-color: #fce8e6;
 }

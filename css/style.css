@@ -36,7 +36,7 @@ img {
   object-fit: contain;
 }
 
-.email-app {
+.email-body {
   display: flex;
   justify-content: space-between;
   align-content: center;
