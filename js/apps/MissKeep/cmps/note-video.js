@@ -8,7 +8,7 @@ export default {
             <h2> {{note.info.title}}</h2>
 
             <iframe :src="note.info.url" frameborder="0"></iframe>
-            <!-- <video :src="note.info.url" > asdasdsad</video> -->
+
             <button @click="remove(note.id)"> DELETE </button>
         </div>
     `,

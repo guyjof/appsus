@@ -67,15 +67,13 @@ export default {
                 }
             }
         },
-        // note: {id:utilService.makeId(),type:"noteTxt", info : {txt:"Create new Note"} }
-        // note: {id:utilService.makeId(),type:"noteImg", info : {txt:"Create new Note"} }
-        // note: {id:utilService.makeId(),type:"noteTxt", info : {txt:"Create new Note"} }
-        // note: {id:utilService.makeId(),type:"noteTxt", info : {txt:"Create new Note"} }
-        // {id: utilService.makeId(),type: "noteImg",info: {url: "https://images.unsplash.com/photo-1597239450996-ea7c2c564412?ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&ixlib=rb-1.2.1&auto=format&fit=crop&w=634&q=80",title: "Me playing Mi"},style: {backgroundColor: "#00d"}
+
 
         changeType(type) {
             if (type === "noteTxt") return this.note = { id: utilService.makeId(), type: "noteTxt", info: { txt: "Create new Note" } }
             if (type ==="noteImg") return this.note = {id: utilService.makeId(),type: "noteImg",info: {url: "https://images.unsplash.com/photo-1597239450996-ea7c2c564412?ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&ixlib=rb-1.2.1&auto=format&fit=crop&w=634&q=80",title: "Me playing Mi"},style: {backgroundColor: "#00d"}}
+            if (type ==="noteTodo") return this.note = {id: utilService.makeId(),type: "noteTodo",info: {url: "https://images.unsplash.com/photo-1597239450996-ea7c2c564412?ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&ixlib=rb-1.2.1&auto=format&fit=crop&w=634&q=80",title: "Me playing Mi"},style: {backgroundColor: "#00d"}}
+            if (type ==="noteVideo") return this.note = {id: utilService.makeId(),type: "noteVideo",info: {url: "https://images.unsplash.com/photo-1597239450996-ea7c2c564412?ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&ixlib=rb-1.2.1&auto=format&fit=crop&w=634&q=80",title: "Me playing Mi"},style: {backgroundColor: "#00d"}}
        
         }
 
@@ -86,3 +84,33 @@ export default {
     //     txtNote.focus();
     // }
 }
+
+// id: utilService.makeId(),
+// type: "noteImg",
+// info: {
+//     url: "https://images.unsplash.com/photo-1597239450996-ea7c2c564412?ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&ixlib=rb-1.2.1&auto=format&fit=crop&w=634&q=80",
+//     title: "Me playing Mi"
+// },
+// style: {
+//     backgroundColor: "#00d"
+// }
+// },
+// {
+// id: utilService.makeId(),
+// type: "noteTodo",
+// info: {
+//     label: "How was it:",
+//     todos: [
+//         { txt: "Do that", doneAt: null },
+//         { txt: "Do this", doneAt: 187111111 }
+//     ]
+// }
+// },
+// {
+// id: utilService.makeId(),
+// type: "noteVideo",
+// info: {
+//     url: 'https://www.youtube.com/embed/lO7XpDalr5g',
+//     title: 'Daily Dose of Internet'
+// }
+// }
