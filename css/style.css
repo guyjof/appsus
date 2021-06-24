@@ -6,6 +6,8 @@
 @import "./apps/MisterMail/app-mail.css";
 @import "./apps/MisterMail/cmps/email-compose.css";
 @import "./apps/MisterMail/cmps/email-nav.css";
+@import "./apps/MisterMail/cmps/email-header.css";
+@import "./apps/MisterMail/cmps/email-list-nav.css";
 @import "./cmps/app-note.css";
 * {
   box-sizing: border-box;
@@ -37,8 +39,8 @@ img {
 }
 
 .email-body {
+  height: 80vh;
   display: flex;
   justify-content: space-between;
   align-content: center;
-  height: 85vh;
 }

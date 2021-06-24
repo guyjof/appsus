@@ -1,16 +1,17 @@
+import emailHeader from "../cmps/email-header.js"
 import emailNav from '../cmps/email-nav.js'
 import emailList from '../cmps/email-list.js'
-import { emailService } from '../services/email-service.js';
-import emailFilter from '../cmps/email-filter.js';
-import emailDetails from '../pages/email-details.js'
-import { utilService } from '../../../services/util-service.js';
 import emailCompose from '../cmps/email-compose.js';
+import emailDetails from '../pages/email-details.js'
+import emailFilter from '../cmps/email-filter.js';
+import { utilService } from '../../../services/util-service.js';
+import { emailService } from '../services/email-service.js';
 import { eventBus } from '../../../services/event-bus-service.js';
 
 export default {
     template: `
         <section class="email-app">
-            <!-- email header -->
+            <email-header />
 
             <div class="email-body">
 
@@ -76,9 +77,10 @@ export default {
         }
     },
     components: {
+        emailHeader,
         emailNav,
         emailList,
         emailDetails,
-        emailCompose
+        emailCompose,
     }
 };
