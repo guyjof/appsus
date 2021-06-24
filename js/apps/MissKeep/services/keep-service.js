@@ -21,13 +21,13 @@ function addNote({type, info}) {
     console.log('Adding new note');
     var newNote = _createNewNoteObj(type, info)
     gNotes.push(newNote)
-    return storageService.post( KEEP_KEY, newNote)
+    return storageService.post(KEEP_KEY, newNote)
 
 }
 
 function remove(noteId) {
     return storageService.remove(KEEP_KEY, noteId)
-  }
+}
 
 
 function _createNewNoteObj(type, info) {

@@ -8,7 +8,8 @@ const gEmails = [
         sender: 'Guy',
         subject: '0Wassap?',
         body: '0Pick up!',
-        isRead: Date.now()
+        isRead: false,
+        sentAt: Date.now()
     },
     {
         id: 2,

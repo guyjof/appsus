@@ -1,4 +1,4 @@
-.email-compose {
+.emailCompose {
   position: fixed;
   bottom: 0;
   right: 50px;
@@ -11,20 +11,28 @@
   overflow: hidden;
 }
 
+.minimized {
+  position: fixed;
+  bottom: -500px;
+}
+
 .email-compose-header {
   display: flex;
   justify-content: space-between;
   color: #fff;
   background: #404040;
-  padding: 10px 15px;
+  padding: 12px 15px;
 }
 
 .email-compose-header-controls button {
-  width: 20px;
-  height: 20px;
+  width: 30px;
+  height: 100%;
   background: transparent;
   color: #b3b3b3;
   border: none;
+}
+.email-compose-header-controls button:hover {
+  background-color: #767676;
 }
 
 .email-compose-body form {
@@ -34,19 +42,44 @@
 }
 .email-compose-body input {
   height: 40px;
+  font-size: 1rem;
+  border-bottom: 1px solid rgb(232, 232, 232);
 }
 .email-compose-body textarea,
 input {
   border: none;
   outline: none;
 }
+.email-compose-body textarea {
+  padding-top: 20px;
+}
 
 .email-compose-footer {
   display: flex;
   justify-content: space-between;
+  align-items: center;
+  width: 100%;
+  position: absolute;
+  bottom: 0;
+  padding: 15px 20px;
 }
 .email-compose-footer button {
-  width: 50px;
-  height: 50px;
   border: none;
+}
+
+button.submit {
+  color: #fff;
+  font-size: 1rem;
+  border-radius: 0.2rem;
+  padding: 0.5rem 1rem;
+  background: #1a73e8;
+}
+
+.email-compose-footer-delete button {
+  background: transparent;
+}
+
+.email-compose-footer-delete span {
+  font-size: 1.5rem;
+  width: 1.5rem;
 }
