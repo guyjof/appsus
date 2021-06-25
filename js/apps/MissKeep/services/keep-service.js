@@ -10,8 +10,28 @@ export default {
     remove,
     addNote,
     newColor,
-    getNoteById
+    getNoteById,
+    getEmtyNote
 
+}
+
+function getEmtyNote(noteType, noteContent) {
+
+    let newNote = {
+        id: utilService.makeId(),
+        type: noteType,
+        isPinned: false,
+    }
+    switch (noteType) {
+        case 'noteTxt':
+            newNote.info = {
+                txt: noteContent
+            }
+            newNote.style = {
+                backgroundColor: "#fbf396"
+            }
+            return newNote
+    }
 }
 
 function newColor(note, color) {
@@ -40,12 +60,12 @@ function remove(noteId) {
 
 
 function _createNewNoteObj(type, info) {
-    console.log("data:", info , "type:", type)
+    console.log("info:", info , "type:", type)
     return {
         id: utilService.makeId(),
         type,
         info,
-        style: {backgroundColor:"rgb(228, 228, 228)"}
+        style: {backgroundColor:"#fbf396"}
         // date: new Date(),
     }
 }
@@ -66,7 +86,7 @@ function _creatNotes() {
                     txt: "Fullstack Me Baby!"
                 },
                 style: {
-                    backgroundColor: "rgb(228, 228, 228)"
+                    backgroundColor: "#fbf396"
                 },
             },
             {
@@ -77,7 +97,7 @@ function _creatNotes() {
                     title: "Me playing Mi"
                 },
                 style: {
-                    backgroundColor: "rgb(228, 228, 228)"
+                    backgroundColor: "#fbf396"
                 }
             },
             {
@@ -91,7 +111,7 @@ function _creatNotes() {
                     ]
                 },
                 style: {
-                    backgroundColor: "rgb(228, 228, 228)"
+                    backgroundColor: "#fbf396"
                 },
             },
             {
@@ -102,7 +122,7 @@ function _creatNotes() {
                     title: 'Daily Dose of Internet'
                 },
                 style: {
-                    backgroundColor: "rgb(228, 228, 228)"
+                    backgroundColor: "#fbf396"
                 },
             }
         ];

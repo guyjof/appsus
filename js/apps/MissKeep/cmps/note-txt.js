@@ -1,7 +1,7 @@
 export default {
     props: ['note'],
     template: `
-        <div :style="{backgroundColor: note.style.backgroundColor}"> 
+        <div :style="{backgroundColor: this.color}"> 
             <p class="note-txt"> {{note.info.txt}}</p>
 
             <div class="note-controls">
@@ -27,7 +27,7 @@ export default {
 
     data() {
         return {
-            color: ""
+            color: "this.note.style.backgroundColor"
         }
     },
 
@@ -40,7 +40,7 @@ export default {
         // updateColor(noteId){ 
         //     console.log(this.note);
         //     console.log(this.color , noteId);
-        
+
         updateColor(noteId) {
             this.$emit('setColor', this.color, noteId)
         }

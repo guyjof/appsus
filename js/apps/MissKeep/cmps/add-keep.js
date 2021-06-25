@@ -6,37 +6,47 @@ export default {
     <section>
         <div class="add-keep-container"> 
             <div class="type-btn-container">
-                <input type="text" placeholder="Add New Note" />
-                <button @click="changeType('noteTxt')"><span class="material-icons">title</span></button>
-                <button  @click="changeType('noteImg')"><span class="material-icons">image</span></button>
-                <button  @click="changeType('noteVideo')"><span class="material-icons">smart_display</span></button>
-                <button  @click="changeType('noteAudio')"><span class="material-icons">volume_up</span></button>
-                <button  @click="changeType('noteTodo')"><span class="material-icons">checklist</span></button>        
-                <button class="add-note-btn" @click="saveNewNote">+</button>
+                    <!-- <input type="text" v-model="note.info.txt" v-bind:placeholder="this.placeholder" @keyup.enter="saveNewNote"/> -->
+                    <input type="text" v-model="noteContent" v-bind:placeholder="this.placeholder" @keyup.enter="saveNewNote"/>
+                <!-- <button @click="changePlaceHolder('txt')"><span class="material-icons">title</span></button> -->
+                <button @click="changeNoteType('noteTxt')"><span class="material-icons">title</span></button>
+                <button  @click="changePlaceHolder('img')"><span class="material-icons">image</span></button>
+                <button  @click="changePlaceHolder('vid')"><span class="material-icons">smart_display</span></button>
+                <button  @click="changePlaceHolder('aud')"><span class="material-icons">volume_up</span></button>
+                <button  @click="changePlaceHolder('todo')"><span class="material-icons">checklist</span></button>        
             </div>
-        <!-- <input class="add-keep-title" ref="inputNote" v-model="note.info.txt" type="text" @keyup.enter="saveNewNote" placeholder="Create new note"> -->
         </div>
     </section>
     `,
 
     data() {
         return {
-            inputText: '',
+
+            noteType: null,
+            noteContent: null,
+
+            // inputText: '',
+            placeholder: "Enter New Note",
             note: {
                 id: utilService.makeId(),
                 type: "noteTxt",
                 info: {
-                    txt: "Create new Note"
+                    txt: ""
                 },
                 style: {
-                    backgroundColor: "#00d"
+                    backgroundColor: "#fbf396"
                 },
             }
         }
     },
 
+    computed: {
+
+    },
+
     methods: {
         saveNewNote() {
+
             this.$emit('save', { ...this.note })
             // this.$emit('save', { info: this.inputText, type: this.note.type })
             this.note = {
@@ -46,18 +56,25 @@ export default {
                     txt: ""
                 },
                 style: {
-                    backgroundColor: "#00d"
+                    backgroundColor: "#fbf396"
                 },
             }
         },
 
+        changeNoteType(type) {
+            this.noteType = type;
+            const newNote = keepService.getEmtyNote(this.noteType, this.noteContent)
+            this.$emit('')
+            // console.log(this.noteType);
+        },
 
-        // changeType(type) {
-        //     if (type === "noteTxt") return this.note = { id: utilService.makeId(), type: "noteTxt", info: { txt: "Create new Note" } }
-        //     if (type === "noteImg") return this.note = { id: utilService.makeId(), type: "noteImg", info: { url: "https://images.unsplash.com/photo-1597239450996-ea7c2c564412?ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&ixlib=rb-1.2.1&auto=format&fit=crop&w=634&q=80", title: "Me playing Mi" }, style: { backgroundColor: "#00d" } }
-        //     if (type === "noteTodo") return this.note = { id: utilService.makeId(), type: "noteTodo", info: { label: "How was it:", todos: [{ txt: "Do that", doneAt: null }, { txt: "Do this", doneAt: Date.now() }] } }
-        //     if (type === "noteVideo") return this.note = { id: utilService.makeId(), type: "noteVideo", info: { url: 'https://www.youtube.com/embed/lO7XpDalr5g', title: 'Daily Dose of Internet' } }
-        // }
+        changePlaceHolder(txt) {
+            if (txt === 'img') return this.placeholder = "Enter new image URL"
+            if (txt === 'txt') return this.placeholder = "Enter new Note"
+            if (txt === 'vid') return this.placeholder = "Enter new video URL"
+            if (txt === 'aud') return this.placeholder = "Enter new audio URL"
+            if (txt === 'todo') return this.placeholder = "Enter new todo list"
+        },
 
     },
 }
