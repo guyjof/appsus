@@ -19,7 +19,6 @@ export default {
                 <section v-for="note in notes" :key="note.id"> 
                     <component class="comp" :is="note.type" :note="note" @remove="removeNote" @setColor="updateColor"/>
                 </section>
-                
             </div>
             
         </div>
