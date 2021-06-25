@@ -34,7 +34,7 @@ export default {
             selectedEmail: null,
             filterBy: '',
             newEmail: false,
-            unreadCount:0
+            unreadCount: 0
         }
     },
     created() {
@@ -42,8 +42,8 @@ export default {
         eventBus.$on('removeEmail', (emailId) => {
             emailService.remove(emailId)
                 .then(() => this.loadEmails())
-                .then(()=>  this.getUnread)
-                .then(()=>  this.unreadCount = this. getUnread)
+                .then(() => this.getUnread)
+                .then(() => this.unreadCount = this.getUnread)
         })
     },
     methods: {
@@ -55,7 +55,7 @@ export default {
 
         selectEmail(email) {
             this.selectedEmail = email;
-            
+
         },
         closeDetails() {
             this.selectedEmail = null;
@@ -75,10 +75,10 @@ export default {
         },
     },
     computed: {
-        getUnread(){
-            let counter =0;
-            for (let i = 0; i < this.emails.length; i++){
-                if(!this.emails[i].isRead){
+        getUnread() {
+            let counter = 0;
+            for (let i = 0; i < this.emails.length; i++) {
+                if (!this.emails[i].isRead) {
                     counter++
                 }
             }

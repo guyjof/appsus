@@ -1,11 +1,13 @@
 header {
   display: flex;
   justify-content: space-between;
+  align-content: center;
+  align-items: center;
   padding: 10px 20px;
   gap: 20px;
 }
 
-button {
+header button {
   border: none;
   background-color: transparent;
 }
@@ -23,6 +25,9 @@ button {
 
 .logo-container {
   display: flex;
+  align-items: center;
+  align-content: center;
+  justify-content: center;
 }
 
 .logo-img {
@@ -64,4 +69,9 @@ button {
 .header-right span {
   font-size: 40px;
   color: #6d7074;
+}
+
+.note-logo {
+  object-fit: cover;
+  width: 60px;
 }

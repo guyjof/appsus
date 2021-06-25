@@ -1,15 +1,12 @@
 
 import keepApp from "./pages/keep-app.js";
-import appHeader from "../../cmps/app-header.js";
+import noteHeader from "../../apps/MissKeep/cmps/note-header.js";
 
 export default {
     template: `
         <section>
-            <section> 
-                <app-header />
-            </section>
-            <h1>Note App</h1>
-            <keep-app/>
+                <note-header />
+                <keep-app />
         </section>
     `,
     data() {
@@ -20,6 +17,6 @@ export default {
 
     components: {
         keepApp,
-        appHeader
+        noteHeader
     }
 };
