@@ -15,9 +15,6 @@ export default {
 }
 
 function newColor(note, color) {
-    console.log(color);
-    console.log(note);
-    // console.log(note, color);
     note.style.backgroundColor = color
     return storageService.put(KEEP_KEY, note)
 }
@@ -27,8 +24,7 @@ function query() {
     return storageService.query(KEEP_KEY)
 }
 
-function addNote({type, info}) {
-    console.log('Adding new note');
+function addNote({ type, info }) {
     var newNote = _createNewNoteObj(type, info)
     gNotes.push(newNote)
     return storageService.post(KEEP_KEY, newNote)
@@ -40,18 +36,17 @@ function remove(noteId) {
 
 
 function _createNewNoteObj(type, info) {
-    console.log("data:", info , "type:", type)
+    console.log("data:", info, "type:", type)
     return {
         id: utilService.makeId(),
         type,
         info,
-        style: {backgroundColor:"rgb(228, 228, 228)"}
-        // date: new Date(),
+        style: { backgroundColor: "rgb(228, 228, 228)" }
     }
 }
 
-function getNoteById(noteId){
-    return storageService.get(KEEP_KEY,noteId)
+function getNoteById(noteId) {
+    return storageService.get(KEEP_KEY, noteId)
 }
 
 
@@ -66,7 +61,7 @@ function _creatNotes() {
                     txt: "Fullstack Me Baby!"
                 },
                 style: {
-                    backgroundColor: "rgb(228, 228, 228)"
+                    backgroundColor: " #fbf396"
                 },
             },
             {
@@ -77,7 +72,7 @@ function _creatNotes() {
                     title: "Me playing Mi"
                 },
                 style: {
-                    backgroundColor: "rgb(228, 228, 228)"
+                    backgroundColor: "#fbf396"
                 }
             },
             {
@@ -91,7 +86,7 @@ function _creatNotes() {
                     ]
                 },
                 style: {
-                    backgroundColor: "rgb(228, 228, 228)"
+                    backgroundColor: "#fbf396"
                 },
             },
             {
@@ -102,7 +97,7 @@ function _creatNotes() {
                     title: 'Daily Dose of Internet'
                 },
                 style: {
-                    backgroundColor: "rgb(228, 228, 228)"
+                    backgroundColor: "#fbf396"
                 },
             }
         ];
