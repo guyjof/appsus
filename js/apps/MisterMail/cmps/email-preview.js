@@ -22,11 +22,11 @@ export default {
     data() {
         return {
             time: this.email.sentAt,
-            read:false,
+            read: false,
         }
     },
     methods: {
-        isRead(){
+        isRead() {
             this.read = !this.read
             return this.read
         }
@@ -44,7 +44,7 @@ export default {
             date = date.toLocaleString("en-il")
             date = date.split(',')
             date = date[1].split(':')
-            date = date.splice(0,2)
+            date = date.splice(0, 2)
             date = date.join(':')
             return date
         },

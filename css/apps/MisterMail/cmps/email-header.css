@@ -1,4 +1,5 @@
 header {
+  position: relative;
   display: flex;
   justify-content: space-between;
   align-content: center;
@@ -74,4 +75,45 @@ header button {
 .note-logo {
   object-fit: cover;
   width: 60px;
+}
+
+.apps-modal {
+  width: 328px;
+  /* height: 328px; */
+  height: 120px;
+  position: absolute;
+  top: 70px;
+  right: 10px;
+  border-radius: 10px;
+  background-color: #fff;
+  display: flex;
+  justify-content: space-around;
+  align-items: center;
+  align-content: center;
+  box-shadow: 0px 0px 5px 0px rgba(0, 0, 0, 0.2);
+  padding: 10px;
+}
+
+.mail-modal-app,
+.note-modal-app,
+.book-modal-app {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  text-align: center;
+  gap: 10px;
+  height: 100px;
+  padding: 10px;
+  border-radius: 10px;
+}
+.mail-modal-app img,
+.note-modal-app img,
+.book-modal-app img {
+  width: 50px;
+}
+
+.mail-modal-app:hover,
+.note-modal-app:hover,
+.book-modal-app:hover {
+  background-color: #e8f0fe;
 }

@@ -2,7 +2,7 @@ import noteControls from "./note-controls.js"
 export default {
     props: ['note'],
     template: `
-        <div> 
+        <div :style="{backgroundColor:this.color}"> 
             <h4> {{note.info.title}}</h4>
             <iframe :src="note.info.url" frameborder="0"></iframe>
             <note-controls :note="note" @remove="remove" @setColor="updateColor"/>

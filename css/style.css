@@ -9,8 +9,9 @@
 @import "./apps/MisterMail/cmps/email-header.css";
 @import "./apps/MisterMail/cmps/email-list-nav.css";
 @import "./apps/MisterMail/pages/email-details.css";
+@import "./apps/MissKeep/app-note.css";
 @import "./apps/MissKeep/cmps/note-type-container.css";
-@import "./cmps/app-note.css";
+
 * {
   box-sizing: border-box;
   margin: 0;
@@ -33,6 +34,11 @@ button:hover {
 }
 button:active {
   transform: scale(0.99);
+}
+button:active,
+button:focus,
+button {
+  outline: none;
 }
 
 img {

@@ -1,6 +1,6 @@
 
 export default {
-    props:['unread'],
+    props: ['unread'],
     template: `
         <section class="email-nav">
             <div class="send-btn">
@@ -38,12 +38,6 @@ export default {
                         <span class="unread-counter"></span>
                     </div>
                 </li>
-                <!-- <li class="nav-regular nav-drafts">
-                    <span class="material-icons">
-                    description
-                    </span>
-                    Drafts
-                </li> -->
             </ul>
         </section>
     `,
@@ -53,10 +47,10 @@ export default {
         }
     },
     created() {
-        this. getUnread
+        this.getUnread
     },
-    computed:{
-        getUnread(){
+    computed: {
+        getUnread() {
             if (!this.unread) return ''
             return this.unread
         }
