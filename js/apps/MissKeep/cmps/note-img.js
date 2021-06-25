@@ -1,7 +1,7 @@
 export default {
     props: ['note'],
     template: `
-        <div> 
+        <div :style="{backgroundColor: note.style.backgroundColor}"> 
             <img :src="note.info.url">
             <button @click="remove(note.id)"> DELETE </button>
         </div>

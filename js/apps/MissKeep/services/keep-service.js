@@ -15,7 +15,10 @@ export default {
 }
 
 function newColor(note, color) {
-    note.style.backgroundColor = `${color}`
+    console.log(color);
+    console.log(note);
+    // console.log(note, color);
+    note.style.backgroundColor = color
     return storageService.put(KEEP_KEY, note)
 }
 
@@ -31,7 +34,6 @@ function addNote({type, info}) {
     return storageService.post(KEEP_KEY, newNote)
 
 }
-
 function remove(noteId) {
     return storageService.remove(KEEP_KEY, noteId)
 }
@@ -43,6 +45,7 @@ function _createNewNoteObj(type, info) {
         id: utilService.makeId(),
         type,
         info,
+        style: {backgroundColor:"rgb(228, 228, 228)"}
         // date: new Date(),
     }
 }
@@ -61,7 +64,10 @@ function _creatNotes() {
                 type: "noteTxt",
                 info: {
                     txt: "Fullstack Me Baby!"
-                }
+                },
+                style: {
+                    backgroundColor: "rgb(228, 228, 228)"
+                },
             },
             {
                 id: utilService.makeId(),
@@ -71,7 +77,7 @@ function _creatNotes() {
                     title: "Me playing Mi"
                 },
                 style: {
-                    backgroundColor: "#00d"
+                    backgroundColor: "rgb(228, 228, 228)"
                 }
             },
             {
@@ -83,7 +89,10 @@ function _creatNotes() {
                         { txt: "Do that", doneAt: null },
                         { txt: "Do this", doneAt: 187111111 }
                     ]
-                }
+                },
+                style: {
+                    backgroundColor: "rgb(228, 228, 228)"
+                },
             },
             {
                 id: utilService.makeId(),
@@ -91,7 +100,10 @@ function _creatNotes() {
                 info: {
                     url: 'https://www.youtube.com/embed/lO7XpDalr5g',
                     title: 'Daily Dose of Internet'
-                }
+                },
+                style: {
+                    backgroundColor: "rgb(228, 228, 228)"
+                },
             }
         ];
         utilService.saveToStorage(KEEP_KEY, notes)

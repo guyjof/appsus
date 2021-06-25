@@ -42,7 +42,6 @@ export default {
         loadNotes() {
             keepService.query()
                 .then(notes => {
-                    console.log(notes);
                     this.notes = notes
                 })
         },
@@ -63,17 +62,17 @@ export default {
 
         updateColor(color, noteId) {
             keepService.getNoteById(noteId)
-            .then(note => {
-                keepService.newColor(note, color)
-                .then(() => {
-                    this.loadNotes
+                .then((note) => {
+                    keepService.newColor(note, color)
                 })
-
-            })
+                .then((updatedNote) => {
+                    console.log(updatedNote)
+                    this.loadNotes()
+                })
         }
-
-
     },
+
+
 
     components: {
         addKeep,

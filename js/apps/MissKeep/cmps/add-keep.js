@@ -31,7 +31,10 @@ export default {
                 type: "noteTxt",
                 info: {
                     txt: "Create new Note"
-                }
+                },
+                style: {
+                    backgroundColor: "#00d"
+                },
             }
         }
     },
@@ -45,7 +48,10 @@ export default {
                 type: "noteTxt",
                 info: {
                     txt: ""
-                }
+                },
+                style: {
+                    backgroundColor: "#00d"
+                },
             }
         },
 
