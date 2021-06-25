@@ -11,17 +11,24 @@ export default {
     addNote,
     newColor,
     getNoteById,
-    getEmtyNote
+    getEmtyNote,
+    addNewNote
 
 }
 
 function getEmtyNote(noteType, noteContent) {
+
+    if (noteType === "noteVideo") {
+        noteContent = noteContent.replace('watch?v=', 'embed/')
+    }
+
 
     let newNote = {
         id: utilService.makeId(),
         type: noteType,
         isPinned: false,
     }
+
     switch (noteType) {
         case 'noteTxt':
             newNote.info = {
@@ -30,7 +37,29 @@ function getEmtyNote(noteType, noteContent) {
             newNote.style = {
                 backgroundColor: "#fbf396"
             }
-            return newNote
+            return newNote;
+            break;
+        case 'noteImg':
+            newNote.info = {
+                url: `${noteContent}`,
+                title: "",
+            },
+            newNote.style = {
+                backgroundColor: "#fbf396"
+            }
+            return newNote;
+            break;
+        case 'noteVideo':
+            newNote.info = {
+                url: `${noteContent}`,
+                title: "",
+            },
+            newNote.style = {
+                backgroundColor: "#fbf396"
+            }
+            return newNote;
+            break;
+
     }
 }
 
@@ -54,14 +83,18 @@ function remove(noteId) {
     return storageService.remove(KEEP_KEY, noteId)
 }
 
+function addNewNote(note) {
+    return storageService.post(KEEP_KEY, note)
+}
+
 
 function _createNewNoteObj(type, info) {
-    console.log("info:", info , "type:", type)
+    console.log("info:", info, "type:", type)
     return {
         id: utilService.makeId(),
         type,
         info,
-        style: {backgroundColor:"#fbf396"}
+        style: { backgroundColor: "#fbf396" }
         // date: new Date(),
     }
 }

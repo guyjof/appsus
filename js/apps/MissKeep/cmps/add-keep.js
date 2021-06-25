@@ -7,13 +7,13 @@ export default {
         <div class="add-keep-container"> 
             <div class="type-btn-container">
                     <!-- <input type="text" v-model="note.info.txt" v-bind:placeholder="this.placeholder" @keyup.enter="saveNewNote"/> -->
-                    <input type="text" v-model="noteContent" v-bind:placeholder="this.placeholder" @keyup.enter="saveNewNote"/>
+                    <input type="text" v-model="noteContent" v-bind:placeholder="this.placeholder" @keyup.enter="addNote"/>
                 <!-- <button @click="changePlaceHolder('txt')"><span class="material-icons">title</span></button> -->
                 <button @click="changeNoteType('noteTxt')"><span class="material-icons">title</span></button>
-                <button  @click="changePlaceHolder('img')"><span class="material-icons">image</span></button>
-                <button  @click="changePlaceHolder('vid')"><span class="material-icons">smart_display</span></button>
-                <button  @click="changePlaceHolder('aud')"><span class="material-icons">volume_up</span></button>
-                <button  @click="changePlaceHolder('todo')"><span class="material-icons">checklist</span></button>        
+                <button  @click="changeNoteType('noteImg')"><span class="material-icons">image</span></button>
+                <button  @click="changeNoteType('noteVideo')"><span class="material-icons">smart_display</span></button>
+                <button  @click="changeNoteType('noteAudio')"><span class="material-icons">volume_up</span></button>
+                <button  @click="changeNoteType('noteTodo')"><span class="material-icons">checklist</span></button>        
             </div>
         </div>
     </section>
@@ -21,22 +21,11 @@ export default {
 
     data() {
         return {
-
-            noteType: null,
+            noteType: 'noteTxt',
             noteContent: null,
-
-            // inputText: '',
+            noteTitle: "",
             placeholder: "Enter New Note",
-            note: {
-                id: utilService.makeId(),
-                type: "noteTxt",
-                info: {
-                    txt: ""
-                },
-                style: {
-                    backgroundColor: "#fbf396"
-                },
-            }
+
         }
     },
 
@@ -45,36 +34,22 @@ export default {
     },
 
     methods: {
-        saveNewNote() {
-
-            this.$emit('save', { ...this.note })
-            // this.$emit('save', { info: this.inputText, type: this.note.type })
-            this.note = {
-                id: "",
-                type: "noteTxt",
-                info: {
-                    txt: ""
-                },
-                style: {
-                    backgroundColor: "#fbf396"
-                },
-            }
+        addNote() {
+            if (!this.noteContent) return
+            const newNote = keepService.getEmtyNote(this.noteType, this.noteContent)
+            this.$emit('addNote', newNote) 
+            this.noteContent = ""
         },
 
         changeNoteType(type) {
             this.noteType = type;
-            const newNote = keepService.getEmtyNote(this.noteType, this.noteContent)
-            this.$emit('')
-            // console.log(this.noteType);
-        },
-
-        changePlaceHolder(txt) {
-            if (txt === 'img') return this.placeholder = "Enter new image URL"
-            if (txt === 'txt') return this.placeholder = "Enter new Note"
-            if (txt === 'vid') return this.placeholder = "Enter new video URL"
-            if (txt === 'aud') return this.placeholder = "Enter new audio URL"
-            if (txt === 'todo') return this.placeholder = "Enter new todo list"
-        },
-
+            console.log(this.noteType);
+            // changePlaceHolder(type)
+            if (type === 'noteTxt') return this.placeholder = "Enter new Note"
+            if (type === 'noteImg') return this.placeholder = "Enter new Image URL"
+            if (type === 'noteVideo') return this.placeholder = "Enter new Youtube URL"
+            if (type === 'noteAudio') return this.placeholder = "Enter new Audio"
+            if (type === 'noteTodo') return  this.placeholder = "Enter new Todo"
+        } 
     },
 }

@@ -31,7 +31,9 @@ export default {
             this.$emit('remove', noteId)
         },
         updateColor(noteId) {
+            console.log(this.color);
             this.$emit('setColor', this.color, noteId)
+            console.log(this.color);
         }
     },
 
