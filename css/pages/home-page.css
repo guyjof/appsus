@@ -1,0 +1,22 @@
+.home-page {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-content: center;
+  align-items: center;
+}
+.home-page > div {
+  height: 100%;
+  display: flex;
+  justify-content: center;
+  align-content: center;
+  align-items: center;
+}
+
+.mail-card {
+}
+.note-card {
+}
+
+.book-card {
+}
