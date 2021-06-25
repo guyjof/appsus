@@ -1,0 +1,41 @@
+.add-keep-container {
+  background-color: rgb(238, 238, 238);
+  margin-bottom: 20px;
+  display: flex;
+  justify-content: center;
+  padding: 10px 0;
+}
+
+.add-note-btn {
+  background-color: rgb(255, 255, 255);
+  border: 1px solid rgb(0, 0, 0);
+  padding: 1px 30px;
+}
+
+.type-btn-container {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+  height: 50px;
+  max-width: 500px;
+  background: #fff;
+  color: #6d7074;
+  padding: 10px;
+  border-radius: 10px;
+}
+.type-btn-container input {
+  background: transparent;
+  width: 100%;
+  padding: 10px;
+  outline: none;
+  font-size: 1rem;
+}
+
+.type-btn-container span {
+  color: #bababa;
+  font-size: 1.2rem;
+}
+.type-btn-container span:active,
+.type-btn-container span:hover {
+  color: #2b2b2b;
+}

@@ -1,70 +1,90 @@
 .keep-app {
-    display: flex;
-    flex-direction: column;
-    justify-content: center;
-    text-align: center;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  text-align: center;
+  margin-bottom: 20px;
 }
 
 .notes-list {
-    display: grid;
-    margin-top: 20px;
-    grid-template-columns: 1fr 1fr 1fr 1fr 1fr;
-    grid-template-rows: 2fr 1fr 3fr 1fr;
-    text-align: center;
+  display: grid;
+  margin-top: 20px;
+  grid-template-columns: 1fr 1fr 1fr 1fr 1fr;
+  grid-template-rows: 2fr 1fr 3fr 1fr;
+  text-align: center;
 }
 
-
-
+.test-container {
+  padding: 0 20px;
+}
 
 .note-container {
-	display: grid;
-	grid-template-columns: repeat(auto-fill, minmax(250px, 1fr));
-	grid-auto-rows: 250px;
-	grid-auto-flow: dense;
-	gap: 10px;
-	text-align: center;
-	margin: 10px 5px;
+  display: grid;
+  grid-template-columns: repeat(auto-fit, 250px);
+  grid-auto-rows: 1fr;
+  grid-auto-flow: dense;
+  gap: 15px;
+  text-align: center;
 }
 
-/* .test-container {
-
-} */
-
 .comp {
-    display: flex;
-    flex-direction: column;
-    align-items: center;
-    justify-content: space-between;
-    width: 240px;
-    height: 200px;
-    background-color: rgb(228, 228, 228);
-    border: 1px solid black;
-    border-radius: 20px;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: space-between;
+  width: 240px;
+  height: 200px; /* to change */
+  background-color: #fbf396;
+  border-radius: 10px;
+  padding: 10px;
+  cursor: pointer;
+  -webkit-box-shadow: 0px 0px 5px 0px rgba(0, 0, 0, 0.2);
+  box-shadow: 0px 0px 5px 0px rgba(0, 0, 0, 0.2);
 }
 
 .note-txt {
-    margin-top: 10px;
+  margin-top: 10px;
 }
 
 .btn-container {
-    display: flex;
-    flex-direction: row;
-    /* justify-content: space-between; */
+  display: flex;
+  flex-direction: row;
 }
 
-
-.add-keep-container {
-    background-color:rgb(253, 190, 94);
-    /* height: 200px; */
-    /* display: flex; */
-    /* flex-direction: column; */
+.note-controls {
+  display: flex;
+  align-content: center;
+  align-items: center;
+  justify-content: space-between;
+  gap: 20px;
+}
+.note-controls span {
+  color: rgb(45, 45, 45);
 }
 
-.add-note-btn{
-    background-color: rgb(255, 255, 255);
-    border: 1px solid rgb(0, 0, 0);
-    padding: 1px 30px;
-    margin: 10px;
-    /* border-radius:10px ; */
+.remove-btn:hover span,
+.edit-btn:hover span,
+.pin-btn:hover span,
+.duplicate-btn:hover span,
+.color-btn:hover span {
+  transform: scale(1.2);
+  color: black;
 }
 
+.color-btn {
+  position: relative;
+}
+.color-palette {
+  z-index: -1;
+}
+
+.colorpicker {
+  display: flex;
+  align-items: center;
+  align-content: center;
+  position: absolute;
+  left: 0;
+  bottom: 0;
+  opacity: 0;
+  cursor: pointer;
+}

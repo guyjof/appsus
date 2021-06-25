@@ -5,20 +5,16 @@ export default {
     template: `
     <section>
         <div class="add-keep-container"> 
-            <h2> Add new note: </h2>
-            <!-- <h3> Choose note type:</h3> -->
             <div class="type-btn-container">
-                <!-- <button @click="changeType('noteTxt')"> noteTxt </button>
-                <button  @click="changeType('noteTodo')"> noteTodo </button>
-                <button  @click="changeType('noteImg')"> noteImg </button>
-                <button  @click="changeType('noteVideo')"> noteVideo </button> -->
+                <input type="text" placeholder="Add New Note" />
+                <button @click="changeType('noteTxt')"><span class="material-icons">title</span></button>
+                <button  @click="changeType('noteImg')"><span class="material-icons">image</span></button>
+                <button  @click="changeType('noteVideo')"><span class="material-icons">smart_display</span></button>
+                <button  @click="changeType('noteAudio')"><span class="material-icons">volume_up</span></button>
+                <button  @click="changeType('noteTodo')"><span class="material-icons">checklist</span></button>        
+                <button class="add-note-btn" @click="saveNewNote">+</button>
             </div>
-        <input class="add-keep-title" ref="inputNote" v-model="note.info.txt" type="text" @keyup.enter="saveNewNote" placeholder="Create new note">
-        <!-- <textarea name="note-txt" id="" cols="30" rows="3" v-model="note.info.txt"></textarea> -->
-
-        <button class="add-note-btn" @click="saveNewNote"> + </button>
-
-
+        <!-- <input class="add-keep-title" ref="inputNote" v-model="note.info.txt" type="text" @keyup.enter="saveNewNote" placeholder="Create new note"> -->
         </div>
     </section>
     `,
@@ -30,7 +26,7 @@ export default {
                 id: utilService.makeId(),
                 type: "noteTxt",
                 info: {
-                    txt: "Create new Note"
+                    txt: ""
                 }
             }
         }
