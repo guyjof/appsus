@@ -12,14 +12,19 @@ import noteImg from "../cmps/note-img.js"
 export default {
     template: `
     <section class="keep-app"> 
-        <h1> Keep organized! Keep your notes</h1>
+        <!-- <h1> Keep organized! Keep your notes</h1> -->
         <add-keep @save="saveNote"/>
         <!-- <keep-list :notes="notes" @remove="removeNote"/> -->
+        <div class="test-container"> 
 
-        <section  class="note-container" v-for="note in notes" :key="note.id"> 
-            <component :is="note.type" :note="note" @remove="removeNote"/>
-        </section>
-
+            <div class="note-container"> 
+                <section v-for="note in notes" :key="note.id"> 
+                    <component class="comp" :is="note.type" :note="note" @remove="removeNote" @setColor="updateColor"/>
+                </section>
+                
+            </div>
+            
+        </div>
     </section>
     `,
 
@@ -43,7 +48,7 @@ export default {
         },
 
         saveNote(note) {
-            // console.log(this.note.data);
+            // console.log(note);
             console.log(note);
             keepService.addNote(note)
                 .then(this.loadNotes)
@@ -54,6 +59,18 @@ export default {
             keepService.remove(noteId)
                 .then(this.loadNotes)
         },
+
+
+        updateColor(color, noteId) {
+            keepService.getNoteById(noteId)
+            .then(note => {
+                keepService.newColor(note, color)
+                .then(() => {
+                    this.loadNotes
+                })
+
+            })
+        }
 
 
     },

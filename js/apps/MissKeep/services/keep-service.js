@@ -9,7 +9,14 @@ export default {
     query,
     remove,
     addNote,
+    newColor,
+    getNoteById
 
+}
+
+function newColor(note, color) {
+    note.style.backgroundColor = `${color}`
+    return storageService.put(KEEP_KEY, note)
 }
 
 
@@ -38,6 +45,10 @@ function _createNewNoteObj(type, info) {
         info,
         // date: new Date(),
     }
+}
+
+function getNoteById(noteId){
+    return storageService.get(KEEP_KEY,noteId)
 }
 
 
