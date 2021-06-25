@@ -3,7 +3,9 @@ export default {
     template: `<section>
                 <app-header />
                     <section class="home-page">
-                        <h1>Welcome!</h1>
+                        <div class="mail-card"> <router-link to="/mail">Mister Mail</router-link></div>
+                        <div class="note-card"> <router-link to="/mail">Miss Keep</router-link></div>
+                        <div class="book-card"> <router-link to="/mail">Miss Books</router-link></div>
                     </section>
                 </section>
     `,

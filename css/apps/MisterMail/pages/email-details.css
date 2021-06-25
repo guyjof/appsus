@@ -1,0 +1,30 @@
+.details-page-body {
+  display: flex;
+}
+
+.details-page-body .email-nav {
+  width: 350px;
+}
+
+.email-details {
+  display: flex;
+  flex-direction: column;
+  padding: 20px;
+  width: 100%;
+}
+
+.details-header {
+  display: flex;
+  justify-content: space-between;
+}
+
+.sender-info {
+  display: flex;
+  padding: 10px;
+  gap: 10px;
+}
+
+.sender-email {
+  font-size: 0.8rem;
+  color: #797979;
+}
