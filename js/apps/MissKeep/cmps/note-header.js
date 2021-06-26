@@ -23,7 +23,7 @@ export default {
 
                 <div class="header-right">
                     <button @click="toggleModal"><span class="material-icons">apps</span></button>
-                    <button><span class="material-icons">account_circle</span></button>
+                    <button><router-link to="/about"><span class="material-icons">account_circle</span></router-link></button>
                 </div>
                 <div v-if="isModalOpen" class="apps-modal">
                     <router-link to="/mail">
