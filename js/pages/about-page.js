@@ -12,7 +12,7 @@ export default {
         <div class="about-main"> 
 
             <div class="profile-container">
-                <img class="profile-img" src="/img/profile/guy.jpg" alt="">
+                <img class="profile-img" src="img/profile/guy.jpg" alt="">
                 <h2 class="about-header" ref="header">Guy Jofre Gonzales</h2>
                 <p class="about-p"> Lorem ipsum dolor sit amet consectetur adipisicing elit. Optio quas rerum ullam aspernatur quidem quae incidunt earum, alias est blanditiis!</p>
                 <ul class="socials-container"> 
@@ -24,7 +24,7 @@ export default {
                 </ul>
             </div>
             <div class="profile-container">
-                <img class="profile-img" src="/img/profile/arthur.jpg" alt="">
+                <img class="profile-img" src="img/profile/arthur.jpg" alt="">
                 <h2 class="about-header" ref="header">Arthur Shtein</h2>
                 <p class="about-p"> Lorem ipsum dolor sit amet consectetur adipisicing elit. Optio quas rerum ullam aspernatur quidem quae incidunt earum, alias est blanditiis!</p>
                 <ul class="socials-container"> 
