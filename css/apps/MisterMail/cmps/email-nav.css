@@ -126,6 +126,9 @@
   color: #db3b32;
 }
 
+.nav-regular {
+  margin-bottom: 5px;
+}
 .nav-regular-closed {
   margin-bottom: 15px;
 }

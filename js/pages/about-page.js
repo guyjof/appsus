@@ -3,10 +3,9 @@ import appFooter from "../cmps/app-footer.js"
 
 export default {
     template: `
-        <section class="home-page app-main">
-        <!-- <about-header/> -->
-        <div> 
-            <router-link> </router-link>
+        <section class="about-page app-main">
+        <div class="back-btn"> 
+        <router-link to="/" class="close-btn"><span class="material-icons">arrow_back</span> Back To Home Page</router-link>
         </div>
 
         <div class="about-main"> 
@@ -35,9 +34,7 @@ export default {
             </div>
 
         </div>
-
         <app-footer/>
-
         </section>
     `,
 

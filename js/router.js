@@ -3,6 +3,7 @@ import aboutPage from './pages/about-page.js'
 import mailApp from './apps/MisterMail/pages/email-app.js'
 import mailDetails from './apps/MisterMail/pages/email-details.js'
 import noteApp from './apps/MissKeep/note-app.js'
+import bookApp from './apps/MissBooks/js/pages/book-app.js'
 
 const routes = [
     {
@@ -24,6 +25,10 @@ const routes = [
     {
         path: '/about',
         component: aboutPage
+    },
+    {
+        path: '/book',
+        component: bookApp
     },
 ];
 
