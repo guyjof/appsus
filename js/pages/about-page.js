@@ -4,7 +4,7 @@ import appFooter from "../cmps/app-footer.js"
 export default {
     template: `
         <section class="home-page app-main">
-        <about-header/>
+        <!-- <about-header/> -->
         <div> 
             <router-link> </router-link>
         </div>
