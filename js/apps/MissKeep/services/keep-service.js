@@ -44,9 +44,9 @@ function getEmtyNote(noteType, noteContent) {
                 url: `${noteContent}`,
                 title: "",
             },
-            newNote.style = {
-                backgroundColor: "#fbf396"
-            }
+                newNote.style = {
+                    backgroundColor: "#fbf396"
+                }
             return newNote;
             break;
         case 'noteVideo':
@@ -54,9 +54,9 @@ function getEmtyNote(noteType, noteContent) {
                 url: `${noteContent}`,
                 title: "",
             },
-            newNote.style = {
-                backgroundColor: "#fbf396"
-            }
+                newNote.style = {
+                    backgroundColor: "#fbf396"
+                }
             return newNote;
             break;
 
@@ -108,6 +108,27 @@ function _creatNotes() {
     var notes = utilService.loadFromStorage(KEEP_KEY)
     if (!notes || !notes.length) {
         notes = [
+            {
+                id: utilService.makeId(),
+                type: "noteTxt",
+                info: {
+                    txt: "Why did the programmer quit his job? Because he didn't get arrays."
+                },
+                style: {
+                    backgroundColor: "#ea96fb"
+                },
+            },
+            {
+                id: utilService.makeId(),
+                type: "noteVideo",
+                info: {
+                    url: 'https://www.youtube.com/embed/xANnLy9aljg',
+                    title: 'Seal Sneeze'
+                },
+                style: {
+                    backgroundColor: "#fbf396"
+                }
+            },
             {
                 id: utilService.makeId(),
                 type: "noteTxt",
