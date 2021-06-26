@@ -2,7 +2,7 @@
 import addKeep from "../cmps/add-keep.js"
 import keepList from "../cmps/keep-list.js"
 import keepService from "../services/keep-service.js"
-
+import appFooter from "../../../cmps/app-footer.js"
 import noteTxt from "../cmps/note-txt.js"
 import noteVideo from "../cmps/note-video.js"
 import noteTodo from "../cmps/note-todo.js"
@@ -22,6 +22,7 @@ export default {
             </div>
             
         </div>
+        <app-footer />
     </section>
     `,
 
@@ -57,7 +58,7 @@ export default {
         updateColor(color, noteId) {
             keepService.getNoteById(noteId)
                 .then((note) => keepService.newColor(note, color))
-                    .then(this.loadNotes)
+                .then(this.loadNotes)
         }
     },
 
@@ -67,7 +68,8 @@ export default {
         noteTxt,
         noteVideo,
         noteTodo,
-        noteImg
+        noteImg,
+        appFooter
 
     }
 }
