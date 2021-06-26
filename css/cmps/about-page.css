@@ -1,0 +1,50 @@
+.about-main {
+    display: flex;
+    margin: 0px 200px
+
+}
+
+.profile-container {
+    display: flex;
+    flex-direction: column;
+    text-align: center;
+    align-items: center;
+
+    margin: 50px 40px;
+    padding: 50px 50px;
+    transition: all 0.5s;
+    border: 1px solid rgba(0, 0, 0, 0);
+    border-radius: 10px;
+}
+
+.profile-container:hover{
+    transform: scale(1.03);
+    box-shadow: 0px 0px 15px 4px rgba(0,0,0,0.1);
+}
+
+.socials-container {
+    margin-top: 10px;
+    display: flex;
+}
+
+.socials-container li {
+    padding-right: 10px;
+    font-size: 20px;
+    cursor: pointer;
+}
+
+.fab {
+    transform: scale(1.02);
+}
+
+.profile-img {
+    border-radius: 10px;
+}
+
+.about-header {
+    margin-top: 10px;
+
+}
+.about-p {
+    margin-top: 10px;
+}
