@@ -1,7 +1,8 @@
 import { i18nService } from '../services/i18n-service.js'
 import { bookService } from '../services/book-service.js';
 import bookReviews from '../cmps/book-reviews.js';
-
+import { utilService } from '../services/util-service.js';
+import { storageService } from '../services/async-storage-service.js';
 export default {
     props: ['book'],
     template: `
@@ -150,3 +151,46 @@ export default {
         bookReviews
     }
 };
+
+const gEmails = [
+    {
+        id: '1',
+        sender: 'Guy',
+        subject: '0Wassap?',
+        body: '0Pick up!',
+        isRead: false,
+        sentAt: Date.now()
+    },
+    {
+        id: '2',
+        sender: 'Puki',
+        subject: '1Wassap?',
+        body: '1Pick up!',
+        isRead: false,
+        sentAt: Date.now()
+    },
+    {
+        id: '3',
+        sender: 'Lolo',
+        subject: '2Wassap?',
+        body: '2Pick up!',
+        isRead: false,
+        sentAt: Date.now()
+    },
+    {
+        id: '4',
+        sender: 'Chipi',
+        subject: '3Wassap?',
+        body: '3Pick up!',
+        isRead: false,
+        sentAt: Date.now()
+    },
+    {
+        id: '5',
+        sender: 'Lala',
+        subject: '4Wassap?',
+        body: '4Pick up!',
+        isRead: false,
+        sentAt: Date.now()
+    },
+]

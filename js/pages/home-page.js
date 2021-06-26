@@ -1,7 +1,5 @@
-import appHeader from '../cmps/app-header.js'
 export default {
     template: `<section>
-                <app-header />
                     <section class="home-page">
                         <router-link to="/mail"> 
                             <div class="mail-card">                   
@@ -25,9 +23,4 @@ export default {
                     </section>
                 </section>
     `,
-    created() {
-    },
-    components: {
-        appHeader,
-    },
 }

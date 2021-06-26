@@ -78,6 +78,7 @@ header button {
 }
 
 .apps-modal {
+  z-index: 3;
   width: 328px;
   /* height: 328px; */
   height: 120px;

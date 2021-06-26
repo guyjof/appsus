@@ -10,7 +10,7 @@ const routes = [
         component: homePage
     },
     {
-        path: '/books',
+        path: '/book',
         component: bookApp
     },
     {
@@ -18,7 +18,7 @@ const routes = [
         component: aboutPage
     },
     {
-        path: '/books/:bookId',
+        path: '/book/:bookId',
         component: bookDetails
     },
 ];

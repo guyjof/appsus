@@ -4,6 +4,7 @@ import mailApp from './apps/MisterMail/pages/email-app.js'
 import mailDetails from './apps/MisterMail/pages/email-details.js'
 import noteApp from './apps/MissKeep/note-app.js'
 import bookApp from './apps/MissBooks/js/pages/book-app.js'
+import bookDetails from './apps/MissBooks/pages/book-details.js'
 
 const routes = [
     {
@@ -29,6 +30,10 @@ const routes = [
     {
         path: '/book',
         component: bookApp
+    },
+    {
+        path: '/book/:bookId',
+        component: bookDetails
     },
 ];
 
