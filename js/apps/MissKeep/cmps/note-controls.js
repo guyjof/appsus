@@ -12,9 +12,9 @@ export default {
                 <div class="pin-btn">
                     <button><span class="material-icons">push_pin</span></button>
                 </div>
-                <div class="duplicate-btn">
+                <!-- <div class="duplicate-btn">
                     <button><span class="material-icons">content_copy</span></button>
-                </div>
+                </div> -->
                 <div class="remove-btn">
                     <button @click="remove(note.id)"> <span class="material-icons">delete</span></button>
                 </div>

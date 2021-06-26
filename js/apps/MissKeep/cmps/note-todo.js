@@ -23,6 +23,9 @@ export default {
         updateColor(color, noteId) {
             this.color = color
             this.$emit('setColor', color, noteId)
+        },
+        toggleDone(todo, idx) {
+            
         }
     },
     components: {

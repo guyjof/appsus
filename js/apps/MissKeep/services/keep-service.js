@@ -106,17 +106,39 @@ function getNoteById(noteId) {
 
 function _creatNotes() {
     var notes = utilService.loadFromStorage(KEEP_KEY)
-    if (!notes || !notes.length) {
-        notes = [
+    if (!notes || !notes.length) {  
+        notes = [ 
+            {
+                id: utilService.makeId(),
+                type: "noteVideo",
+                info: {
+                    url: 'https://www.youtube.com/embed/5qap5aO4i9A',
+                    title: 'Keep calm and listen to lofi'
+                },
+                style: {
+                    backgroundColor: "#fbf396"
+                }
+            },
             {
                 id: utilService.makeId(),
                 type: "noteTxt",
                 info: {
-                    txt: "Why did the programmer quit his job? Because he didn't get arrays."
+                    txt: "Real programmers count from 0"
                 },
                 style: {
                     backgroundColor: "#ea96fb"
                 },
+            },
+            {
+                id: utilService.makeId(),
+                type: "noteImg",
+                info: {
+                    url: "https://www.success.com/wp-content/uploads/legacy/sites/default/files/new2.jpg",
+                    title: "Me playing Mi"
+                },
+                style: {
+                    backgroundColor: "#fbf396"
+                }
             },
             {
                 id: utilService.makeId(),
@@ -128,6 +150,27 @@ function _creatNotes() {
                 style: {
                     backgroundColor: "#fbf396"
                 }
+            },
+            {
+                id: utilService.makeId(),
+                type: "noteImg",
+                info: {
+                    url: "https://miro.medium.com/max/2625/1*oZqGznbYXJfBlvGp5gQlYQ.jpeg",
+                    title: "Me playing Mi"
+                },
+                style: {
+                    backgroundColor: "#fbf396"
+                }
+            },
+            {
+                id: utilService.makeId(),
+                type: "noteTxt",
+                info: {
+                    txt: "Why did the programmer quit his job? Because he didn't get arrays"
+                },
+                style: {
+                    backgroundColor: "#ea96fb"
+                },
             },
             {
                 id: utilService.makeId(),
