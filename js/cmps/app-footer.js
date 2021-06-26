@@ -1,8 +1,8 @@
 export default {
     template: `
     <footer class="app-footer">
-        <div><p>Arthur & Guy</p></div>
-        <div><span>&copy; Coffeerights</span></div>
+        <div><p>2021 Made by Arthur Shtein & Guy Jofre</p></div>
+        <div><span>Coffeerights &copy;</span></div>
         <div></div>
     </footer>
     `,

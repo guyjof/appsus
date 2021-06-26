@@ -45,10 +45,14 @@ export default {
                 id: '',
                 body: '',
                 isRead: false,
+                isChecked: false,
+                isStarred: false,
+                isSent: true,
+                isImportant: false,
                 sentAt: '',
                 sender: {
-                    name:'',
-                    email:''
+                    name: '',
+                    email: ''
                 },
                 subject: '',
             }
@@ -63,10 +67,14 @@ export default {
                         id: '',
                         body: '',
                         isRead: false,
+                        isChecked: false,
+                        isStarred: false,
+                        isSent: true,
+                        isImportant: false,
                         sentAt: '',
                         sender: {
-                            name:'',
-                            email:''
+                            name: '',
+                            email: ''
                         },
                         subject: '',
                     }

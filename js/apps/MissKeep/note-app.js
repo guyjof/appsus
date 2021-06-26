@@ -11,10 +11,8 @@ export default {
     `,
     data() {
         return {
-
         }
     },
-
     components: {
         keepApp,
         noteHeader

@@ -25,7 +25,12 @@
   grid-auto-flow: dense;
   gap: 15px;
   text-align: center;
+<<<<<<< HEAD:css/cmps/app-note.css
   
+=======
+  justify-content: center;
+  align-items: center;
+>>>>>>> 8e8e5116eb4e6312220e34daed3427a22437f149:css/apps/MissKeep/app-note.css
 }
 
 .comp {
