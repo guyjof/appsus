@@ -1,0 +1,92 @@
+.email-container {
+  box-shadow: inset 0 -1px 0 0 rgb(100 121 143 /12%);
+  background: rgba(242, 245, 245, 0.8);
+  color: #202124;
+  cursor: pointer;
+  margin-bottom: 1px;
+}
+
+article.email-container:hover {
+  background-color: #fff;
+}
+
+.email-container.unRead {
+  background: #fff;
+  font-weight: 400;
+}
+
+.email {
+  padding: 0.5rem 1rem;
+  box-shadow: inset 0 -1px 0 0 rgb(100 121 143 /12%);
+  display: flex;
+  gap: 30px;
+  align-items: center;
+  justify-content: space-between;
+}
+
+.email .left-controls {
+  display: flex;
+  gap: 10px;
+}
+
+.email .content {
+  width: 60%;
+  display: flex;
+  justify-content: space-around;
+}
+
+.email:hover {
+  box-shadow: inset 1px 0 0 #dadce0, inset -1px 0 0 #dadce0,
+    0 1px 2px 0 rgb(60 64 67 / 30%), 0 1px 3px 1px rgb(60 64 67 / 15%);
+  z-index: 2;
+}
+
+/* unread */
+.email-name,
+.email-subject,
+.email-time {
+  font-weight: 700;
+}
+
+/* read */
+.email-name.read,
+.email-subject.read,
+.email-time.read {
+  font-weight: 400;
+}
+
+/* controls */
+.email-preview-controls {
+  display: flex;
+}
+
+.email-preview-controls button {
+  border: none;
+  background: transparent;
+  margin-inline-end: 10px;
+}
+
+.email-time {
+  min-width: 102px;
+  margin-inline-end: 10px;
+  text-align: right;
+}
+
+.star-btn,
+.important-btn {
+  color: #f4c84c;
+}
+
+.check-btn {
+  width: 24px;
+  height: 24px;
+}
+
+@media only screen and (max-width: 600px) {
+  .email-container {
+    max-width: 100%;
+  }
+  .email .left-controls {
+    display: none;
+  }
+}

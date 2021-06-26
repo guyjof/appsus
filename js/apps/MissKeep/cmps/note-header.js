@@ -35,7 +35,7 @@ export default {
                     <router-link to="/note">
                         <div class="note-modal-app">
                             <img src="img/google-keep-2-569459.png" alt="Miss Keep">
-                            <small>Miss Kepp</small>
+                            <small>Miss Keep</small>
                         </div>
                     </router-link>
                     <router-link to="/book">

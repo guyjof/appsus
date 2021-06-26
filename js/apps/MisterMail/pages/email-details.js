@@ -9,8 +9,8 @@ export default {
             <email-header />
         </div>
             <div class="details-page-body">
-                <email-nav />
-     
+                <email-nav v-if="navOpen" class="email-nav-cmp"/>
+                <email-nav-closed v-else="navOpen" class="email-nav-cmp"/>
                 <section class="email-details">
                 <div class="details-header">
                     <div class="details-header-subject">
@@ -31,15 +31,16 @@ export default {
             </div>
         </section>
 `,
-data(){
-    return{
-        emailSelected:{},
-    }
-},
+    data() {
+        return {
+            emailSelected: {},
+            navOpen: true
+        }
+    },
     created() {
         const { mailId } = this.$route.params;
         emailService.getById(mailId)
-        .then(email => this.emailSelected = email)
+            .then(email => this.emailSelected = email)
     },
     watch: {
         '$route.params.mailId': {
@@ -50,7 +51,21 @@ data(){
             },
         }
     },
-    components:{
+    methodes: {
+        toggleNav() {
+            this.navOpen = !this.navOpen
+        },
+        setFilter(filterBy) {
+            this.filterBy = filterBy;
+        },
+        composeNewEmail() {
+            this.newEmail = true
+        },
+        closeNewEmail() {
+            this.newEmail = false
+        },
+    },
+    components: {
         emailHeader,
         emailNav
     }

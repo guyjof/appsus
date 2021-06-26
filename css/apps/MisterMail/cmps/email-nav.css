@@ -36,36 +36,123 @@
   font-size: 1.3rem;
 }
 
-.nav-regular:hover {
-  color: #202124;
-  background-color: #e8eaed;
-}
-.nav-inbox:active,
-.nav-inbox:hover {
-  color: #d93025;
+/* Inbox Button */
+.nav-inbox:hover,
+.activeInbox {
   background-color: #fce8e6;
 }
+.nav-inbox:hover button,
+.activeInbox button {
+  color: #d93025;
+}
 
-.nav-starred:active,
-.nav-starred:hover {
-  color: #e37400;
+/* Starred Button */
+.nav-starred:hover,
+.activeStarred {
   background-color: #feefe3;
 }
+.nav-starred:hover button,
+.activeStarred button {
+  color: #e37400;
+}
 
-.nav-sent:active,
-.nav-sent:hover {
-  color: #188038;
+/* Sent Button */
+.nav-sent:hover,
+.activeSent {
   background-color: #e6f4ea;
 }
+.nav-sent:hover button,
+.activeSent button {
+  color: #188038;
+}
+
+/*  Important Button  */
+.nav-important:hover,
+.activeImportant {
+  background-color: #e8f0fe;
+}
+.activeImportant button,
+.nav-important:hover button {
+  color: #1a73e8;
+}
+
+/*   Read Button   */
+.nav-read:hover,
+.activeRead {
+  background-color: #f3e8fd;
+}
+.activeRead button,
+.nav-read:hover button {
+  color: #a142f4;
+}
+
+/*   Unread Button   */
+.nav-unread:hover,
+.activeUnread {
+  background-color: #fde8fb;
+}
+.activeUnread button,
+.nav-unread:hover button {
+  color: #d642f4;
+}
+
+/*  Compose Button  */
 
 .add-btn {
   font-weight: 700;
 }
 
-.nav-title {
+.nav-title button {
   display: flex;
   align-items: center;
   align-content: center;
   justify-content: center;
   gap: 15px;
+  font-size: 1rem;
+}
+
+.email-nav-closed {
+  width: 70px;
+}
+
+.send-btn-closed button {
+  display: flex;
+  padding: 8px;
+  box-shadow: 0px 0px 5px 0.5px rgba(0, 0, 0, 0.2);
+  background: #fff;
+  border-radius: 50%;
+  margin: 0.6rem auto;
+  margin-bottom: 0.8rem;
+  color: #db3b32;
+}
+
+.nav-regular-closed {
+  margin-bottom: 15px;
+}
+
+.nav-regular-closed {
+  display: flex;
+  align-items: center;
+  align-content: center;
+  justify-content: center;
+  border-radius: 50%;
+  width: 40px;
+  height: 40px;
+}
+
+.closed-ul {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+.nav-closed-img {
+  width: 24px;
+  height: 24px;
+}
+
+@media only screen and (max-width: 600px) {
+  .email-nav-cmp {
+    display: none;
+  }
 }

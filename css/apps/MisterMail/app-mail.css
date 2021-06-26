@@ -1,73 +1,13 @@
 .email-body {
-  height: 80vh;
   display: flex;
   justify-content: space-between;
   align-content: center;
+  min-height: 80vh;
 }
 
 .main {
   width: 100%;
 }
-.email-container {
-  box-shadow: inset 0 -1px 0 0 rgb(100 121 143 /12%);
-  background: rgba(242, 245, 245, 0.8);
-  color: #202124;
-  cursor: pointer;
-  margin-bottom: 1px;
-}
-
-article.email-container:hover {
-  background-color: #fff;
-}
-
-.email-container.unRead {
-  background: #fff;
-  font-weight: 400;
-}
-
-.email {
-  padding: 0.5rem 1rem;
-  box-shadow: inset 0 -1px 0 0 rgb(100 121 143 /12%);
-  display: flex;
-  gap: 30px;
-  align-items: center;
-  justify-content: space-between;
-}
-
-.email .left-controls {
-  display: flex;
-  gap: 10px;
-}
-
-.email .content {
-  width: 60%;
-  display: flex;
-  justify-content: space-around;
-}
-
-.email:hover {
-  box-shadow: inset 1px 0 0 #dadce0, inset -1px 0 0 #dadce0,
-    0 1px 2px 0 rgb(60 64 67 / 30%), 0 1px 3px 1px rgb(60 64 67 / 15%);
-  z-index: 2;
-}
-
-/* unread */
-.email-name,
-.email-subject,
-.email-time {
-  font-weight: 700;
-}
-
-/* read */
-.email-name.read,
-.email-subject.read,
-.email-time.read {
-  font-weight: 400;
-}
-
-/* .read {
-  font-weight: 400;
-} */
 
 .email-modal {
   display: flex;
@@ -80,19 +20,27 @@ article.email-container:hover {
   justify-content: space-between;
 }
 
-/* controls */
-.email-preview-controls {
-  display: flex;
+.mobile-compose-btn {
+  display: none;
 }
 
-.email-preview-controls button {
-  border: none;
-  background: transparent;
-  margin-inline-end: 10px;
-}
-
-.email-time {
-  min-width: 102px;
-  margin-inline-end: 10px;
-  text-align: right;
+@media only screen and (max-width: 600px) {
+  .mobile-compose-btn {
+    position: fixed;
+    bottom: 10px;
+    right: 10px;
+    display: flex;
+    justify-content: center;
+    width: 50px;
+    height: 50px;
+    padding: 8px;
+    box-shadow: 0px 0px 5px 0.5px rgba(0, 0, 0, 0.2);
+    background: #fff;
+    border-radius: 50%;
+    margin: 0.6rem auto;
+    margin-bottom: 0.8rem;
+  }
+  .mobile-compose-btn button span {
+    color: #db3b32;
+  }
 }

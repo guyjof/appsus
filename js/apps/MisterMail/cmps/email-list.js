@@ -7,7 +7,7 @@ export default {
     props: ['emails'],
     template: `
         <section class="email-list">
-            <email-list-nav />
+            <email-list-nav class="email-list-nav-cmp"/>
             <ul>
                 <li @mouseenter="toggleIsHovered(email.id)" 
                 @mouseleave="toggleIsHovered(email.id)" 
@@ -52,27 +52,27 @@ export default {
     methods: {
         select(email) {
             this.$emit('selected', email);
-            this.$router.push('/mail/'+email.id)
+            this.$router.push('/mail/' + email.id)
         },
         toggleIsHovered(id) {
             this.emailHoverd = id
         },
-        onToggleRead(id){
+        onToggleRead(id) {
             emailService.getById(id)
                 .then(email => {
                     email.isRead = !email.isRead
                     emailService.save(email)
-                     this.$emit('update')
-                     this.$emit('count',email)
+                    this.$emit('update')
+                    this.$emit('count', email)
                 })
         },
-        isRead(id){
+        isRead(id) {
             emailService.getById(id)
-            .then(email => {
-                email.isRead = true
-                emailService.save(email)
-                 this.$emit('update')
-            })
+                .then(email => {
+                    email.isRead = true
+                    emailService.save(email)
+                    this.$emit('update')
+                })
         }
     },
     created() {
